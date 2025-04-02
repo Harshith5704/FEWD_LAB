@@ -3,155 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shop - Modern Marketplace</title>
+    <title>Home - E-Commerce</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --dark-color: #34495e;
-            --light-color: #ecf0f1;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f7;
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
-
-        /* Navigation Styling */
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-
-        .nav-link {
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        /* Section Styling */
-        .section-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .section-header h2 {
-            display: inline-block;
-            padding: 0 15px;
-            background-color: #f4f6f7;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background-color: #ddd;
-            top: 50%;
-            left: 0;
-            z-index: 0;
-        }
-
-        /* About Section */
-        #about {
-            background-color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        /* Products Section */
-        .category-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .category-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Gallery Section */
-        #gallery .img-container {
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        #gallery .img-container img {
-            transition: transform 0.5s ease;
-        }
-
-        #gallery .img-container:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: white;
-            padding: 4rem 0;
-        }
-
-        .form-control {
-            border-radius: 25px;
-            padding: 10px 15px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
+        body { font-family: Arial, sans-serif; }
+        .navbar { background-color: #f8f9fa; }
+        .navbar-brand { font-weight: bold; }
+        .section-title { margin-bottom: 1rem; text-align: center; }
+        .container p { text-align: center; color: #555; }
+        .category-card { 
             border: none;
-            border-radius: 25px;
-            padding: 10px 20px;
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 2rem 0;
-        }
+        .category-card:hover { transform: scale(1.05); }
+        footer { background-color: #f8f9fa; padding: 1rem 0; }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">E-Shop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -160,123 +31,93 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- About Us Section -->
-    <section id="about" class="container">
-        <div class="section-header">
-            <h2>About Us</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <p>We are a family-owned business dedicated to providing high-quality products and exceptional customer service. Our passion drives us to curate the best selection for our customers.</p>
-            </div>
-        </div>
+    <!-- Home Page Header -->
+    <header class="container text-center my-5">
+        <h1>Welcome to E-Shop!</h1>
+        <img src="https://placehold.co/1200x400?text=Welcome+to+E-Shop+Marketplace" class="img-fluid mt-3 rounded" alt="E-Shop Marketplace Banner">
+    </header>
+
+    <!-- About Us -->
+    <section id="about" class="container my-5">
+        <h2 class="section-title">About Us</h2>
+        <p>We are a family-owned business committed to quality and customer satisfaction.</p>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="container py-5">
-        <div class="section-header">
-            <h2>Our Products</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="category-card">
-                    <h3>Electronics</h3>
-                    <p>Cutting-edge gadgets and tech accessories for the modern consumer.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card">
-                    <h3>Fashion</h3>
-                    <p>Trendy clothing and accessories to express your unique style.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card">
-                    <h3>Home Decor</h3>
-                    <p>Elegant furniture and decorative items to transform your living spaces.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="container py-5">
-        <div class="section-header">
-            <h2>Featured Products</h2>
-        </div>
-        <div class="row">
+    <!-- Products -->
+    <section id="products" class="container my-5">
+        <h2 class="section-title">Our Product Categories</h2>
+        <div class="row text-center">
             <div class="col-md-4 mb-4">
-                <div class="img-container">
-                    <img src="https://placehold.co/400x300" class="img-fluid" alt="Gallery Image 1">
+                <div class="card category-card p-3">
+                    <h5>Electronics</h5>
+                    <p>Latest tech and innovative gadgets</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="img-container">
-                    <img src="https://placehold.co/400x300" class="img-fluid" alt="Gallery Image 2">
+                <div class="card category-card p-3">
+                    <h5>Fashion</h5>
+                    <p>Trendy clothes for every style</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="img-container">
-                    <img src="https://placehold.co/400x300" class="img-fluid" alt="Gallery Image 3">
+                <div class="card category-card p-3">
+                    <h5>Home Decor</h5>
+                    <p>Transform your living spaces</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container">
-        <div class="section-header">
-            <h2>Contact Us</h2>
-        </div>
+    <!-- Gallery -->
+    <section id="gallery" class="container my-5">
+        <h2 class="section-title">Gallery</h2>
         <div class="row">
-            <div class="col-md-8 mx-auto">
-                <form>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary me-2">Send Message</button>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                    </div>
-                </form>
+            <div class="col-md-4 mb-3">
+                <img src="https://placehold.co/400x300" class="img-fluid rounded" alt="Gallery Image 1">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://placehold.co/400x300" class="img-fluid rounded" alt="Gallery Image 2">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://placehold.co/400x300" class="img-fluid rounded" alt="Gallery Image 3">
             </div>
         </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="container my-5">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="text-center">
+            <input type="text" id="name" class="form-control mb-3" placeholder="Name" required>
+            <input type="email" id="email" class="form-control mb-3" placeholder="Email" required>
+            <textarea id="message" class="form-control mb-3" placeholder="Message" rows="4" required></textarea>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
     </section>
 
     <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Login to E-Shop</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="loginEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <input type="email" class="form-control mb-3" placeholder="Email" required>
+                        <input type="password" class="form-control mb-3" placeholder="Password" required>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
                     </form>
                 </div>
             </div>
@@ -284,7 +125,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-4">
+    <footer class="text-center">
         <p>&copy; 2025 E-Shop. All rights reserved.</p>
     </footer>
 
